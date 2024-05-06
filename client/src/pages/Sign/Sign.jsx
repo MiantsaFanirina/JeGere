@@ -134,7 +134,7 @@ const Sign = () => {
   return (
     <div className="sign">
       <main>
-        <div className="box bg-white text-gray-600">
+        <div className="box bg-base-300 text-gray-200">
           <div className="inner-box">
             <div className="forms-wrap">
               <form autoComplete="off" className="sign-in-form">
@@ -143,7 +143,7 @@ const Sign = () => {
                 </div>
 
                 <div className="heading">
-                  <h2 className="text-gray-600">Un site de rencontre et de ressources pour les anciens participants des compétitions Webcup</h2>
+                  <h2 className="text-gray-200">Un site de rencontre et de ressources pour les anciens participants des compétitions Webcup</h2>
                   <h6 className="text-gray-500">Pas encore de compte? </h6>
                   <a href="" className="toggleLink text-primary hover:text-secondary">S'inscrire</a>
                 </div>
@@ -153,7 +153,7 @@ const Sign = () => {
                     <input
                       type="text"
                       minLength="4"
-                      className="input-field focus:text-gray-900"
+                      className="input-field focus:text-gray-200"
                       autoComplete="off"
                       name="email"
                       value={formData.email}
@@ -167,7 +167,7 @@ const Sign = () => {
                     <input
                       type="password"
                       minLength="4"
-                      className="input-field focus:text-gray-900"
+                      className="input-field focus:text-gray-200"
                       autoComplete="off"
                       name="password"
                       value={formData.password}
@@ -199,7 +199,7 @@ const Sign = () => {
                 </div>
 
                 <div className="heading">
-                  <h2 className="text-gray-600">Créer un compte</h2>
+                  <h2 className="text-gray-200">Créer un compte</h2>
                   <h6 className="text-gray-500">Vous avez déjà un compte? </h6>
                   <a href="" className="toggleLink text-primary hover:text-secondary">Se connecter</a>
                 </div>
@@ -209,7 +209,7 @@ const Sign = () => {
                     <input
                       type="text"
                       minLength="4"
-                      className="input-field focus:text-gray-900"
+                      className="input-field focus:text-gray-200"
                       autoComplete="off"
                       name="username"
                       value={formData.username}
