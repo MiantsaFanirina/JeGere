@@ -9,13 +9,20 @@ import './App.css'
 // pages
 import Sign from "./pages/Sign/Sign"
 import Home from "./pages/Home"
+import Forum from "./pages/Forum"
+
+// Layout
+import MainLayout from "./layouts/MainLayout"
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/sign" element={<Sign/>}/>
-        <Route index path="/" element={<Home/>}/>
+        <Route path="/" element={<MainLayout/>}>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/forum" element={<Forum/>}/>
+        </Route>
       </Routes>
     </>
   )
