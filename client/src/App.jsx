@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/sign" element={<Sign/>}/>
         <Route path="/" element={<MainLayout/>}>
-          <Route path="/" element={<Home/>}/>
+          <Route path="/home" element={<Home/>}/>
           <Route path="/forum" element={<Forum/>}/>
         </Route>
       </Routes>

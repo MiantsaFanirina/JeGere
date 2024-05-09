@@ -17,7 +17,7 @@ const Navbar = () => {
                 <IoSearch className="text-2xl"/>
 
                 <div className="form-control ml-4">
-                    <input type="text" placeholder="Search" className="input w-72 focus:outline-none focus:border-none" />
+                    <input type="text" placeholder="Search" className="input w-72 focus:outline-none focus:border-none text-primary" />
                 </div>
                 
             </div>

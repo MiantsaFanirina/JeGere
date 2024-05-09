@@ -1,7 +1,5 @@
-import React, {Children, useEffect, useRef, useState} from 'react'
+import React, {useState} from 'react'
 
-// motion
-import { motion, useInView, useAnimation } from 'framer-motion'
 
 
 // icon
@@ -10,37 +8,14 @@ import { FaRegHeart, FaHeart  } from "react-icons/fa";
 
 const ForumCard = ({username, createdAt, commentNumber, children}) => {
   const [follow, setFollow] = useState(false)
-  const ref = useRef(null)
-  const isInView = useInView(ref, {once: true})
 
-  const mainControls = useAnimation()
-
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start('visible')
-    }
-  }, [isInView])
 
   const handleFollow = () => {
     setFollow(!follow)
   }
 
   return (
-    <motion.div 
-      ref={ref}
-      variants={{
-        hidden: {
-          opacity: 0,
-          x: 75
-        },
-        visible: {
-          opacity: 1,
-          x: 0
-        }
-      }}
-      initial="hidden"
-      animate={mainControls}
-      transition={{duration: 0.2, delay: 0.1}}
+    <div 
       className='w-full bg-base-100 rounded-md shadow-lg p-12 flex relative'>
         
       <div className='flex items-center justify-center'>
@@ -54,7 +29,7 @@ const ForumCard = ({username, createdAt, commentNumber, children}) => {
 
         <div className="w-full ml-6 flex flex-col justify-center">
           <h3 className="text-xl font-bold mb-4 flex items-center gap-3">{username} <button onClick={handleFollow}>{follow ? <FaHeart className="text-2xl text-secondary"/> : <FaRegHeart className="text-2xl"/>}</button></h3>
-          <p className="text-gray-600 mb-3">{createdAt}</p>
+          <p className="text-secondary mb-3">{createdAt}</p>
           <p>{children}</p>
         </div>
 
@@ -87,7 +62,7 @@ const ForumCard = ({username, createdAt, commentNumber, children}) => {
 
 
       </div>
-    </motion.div>
+    </div>
   )
 }
 

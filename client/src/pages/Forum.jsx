@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 
-
 // data
 import {ForumColor} from "../data/ForumColor"
 
 // components
 import ForumCard from '../components/ForumCard'
 
+// pages
+import CreateTopic from './CreateTopic'
 
 // icon
 import { BiComment } from "react-icons/bi"
@@ -17,6 +18,9 @@ const Forum = () => {
 
     const [allCommentsFilter, setAllCommentsFilter] = useState(true)
     const [followingCommentsFilter, setFollowingCommentsFilter] = useState(false)
+    
+    // for the create topic
+    const [showCreateTopic, setShowCreateTopic] = useState(false)
 
     const onChangeFilterAllCommentsFilter = () => {
         if(!allCommentsFilter) {
@@ -35,7 +39,7 @@ const Forum = () => {
 
     return (
         <>
-            <div className="w-full h-full flex">
+            <div className={`w-full h-full flex relative ${showCreateTopic ? "-left-full opacity-0": "left-0 opacity-100 delay-200"} transition-all duration-500 ease-linear`}>
                 <div className="md:w-3/4 w-full flex flex-col">
                     <select className="select focus:outline-none focus:border-none w-full max-w-xs">
                         <option selected>Les plus récents</option>
@@ -93,7 +97,7 @@ const Forum = () => {
                     </div>
                 </div>
                 <div className="md:w-1/4 w-full md:flex hidden flex-col pl-12">  
-                    <button onClick={()=>document.getElementById('AddTopicModal').showModal()} className="btn btn-primary mb-6">
+                    <button  onClick={() => setShowCreateTopic(curr => !curr)} className="btn btn-primary text-bold tracking-widest text-lg text-white mb-6">
                         Demarrer une nouvelle discussion
                     </button>
 
@@ -138,6 +142,7 @@ const Forum = () => {
 
                 </div>
             </div>
+            <CreateTopic showCreateTopic={showCreateTopic} setShowCreateTopic={setShowCreateTopic}/>
         </>
     )
 }
