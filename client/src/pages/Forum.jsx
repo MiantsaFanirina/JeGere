@@ -97,8 +97,8 @@ const Forum = () => {
                     </div>
                 </div>
                 <div className="md:w-1/4 w-full md:flex hidden flex-col pl-12">  
-                    <button  onClick={() => setShowCreateTopic(curr => !curr)} className="btn btn-primary text-bold tracking-widest text-lg text-white mb-6">
-                        Demarrer une nouvelle discussion
+                    <button  onClick={() => setShowCreateTopic(curr => !curr)} className="btn btn-primary text-boldt text-lg mb-6">
+                        Start new topic
                     </button>
 
                     <div className="w-full">
