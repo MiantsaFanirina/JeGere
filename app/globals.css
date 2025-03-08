@@ -1,2 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Gloria+Hallelujah&display=swap');
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

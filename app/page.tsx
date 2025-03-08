@@ -1,12 +1,21 @@
-import Image from "next/image";
+"use client"
+import { motion } from "motion/react"
+import LandingHero from "@/components/landing/landing-hero";
+import Login from "@/components/landing/Login";
 
 export default function Home() {
-  return (
-      <div className={'h-screen w-[50vw] overflow-hidden fixed top-0 left-0'}>
-        <Image
-            src={'/character/character.png'} alt={'character'} width={1000} height={1000}
-            className={'h-1/3 md:h-1/2 w-auto absolute bottom-0 left-1/2 -translate-x-1/2'}
-        />
-      </div>
-  );
+    return (
+        <>
+            <LandingHero/>
+            <div className={'h-screen w-screen md:w-[50vw] fixed top-0 right-0 flex items-center justify-center'}>
+
+                <motion.div
+                    initial={{scale: 0.8, opacity: 0}} animate={{scale: 1, opacity: 1}}
+                    transition={{duration: 0.3, delay: 2.2, type: "spring"}}
+                >
+                    <Login/>
+                </motion.div>
+            </div>
+        </>
+    );
 }
